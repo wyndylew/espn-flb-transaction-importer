@@ -1,0 +1,12 @@
+{
+  "name": "waiver-import",
+  "version": "1.0.0",
+  "description": "ESPN Fantasy Baseball Waiver Importer",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.24.0"
+  }
+}
