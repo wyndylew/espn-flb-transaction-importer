@@ -11,6 +11,8 @@ This only runs for 2018; I have no idea if it works for any other previous seaso
 
 Some players did not have IDs in the map, so they'll be listed as UNKNOWN in the export. Most of the players should be there, however. If you need that information, you can probably figure it out by looking at team rosters and deducing which player it is.
 
+The code itself is very clowny; I wrote it in like an hour or two so please be gentle.
+
 Running this is probably not condoned behavior by ESPN, so don't be a dick with this. Run it, get your data, and get out. ESPN may be mean to us by not showing us old transaction data, so don't be mean back and ruin this for the other folks who still would like to recover this information.
 
 I'm not responsible for anything that happens to your ESPN account by doing this. Use at your own risk.
