@@ -9,6 +9,8 @@ You will need to authenticate with your ESPN username and password through this 
 
 This only runs for 2018; I have no idea if it works for any other previous seasons (probably not).
 
+Some players did not have IDs in the map, so they'll be listed as UNKNOWN in the export. Most of the players should be there, however. If you need that information, you can probably figure it out by looking at team rosters and deducing which player it is.
+
 Running this is probably not condoned behavior by ESPN, so don't be a dick with this. Run it, get your data, and get out. ESPN may be mean to us by not showing us old transaction data, so don't be mean back and ruin this for the other folks who still would like to recover this information.
 
 I'm not responsible for anything that happens to your ESPN account by doing this. Use at your own risk.
@@ -28,3 +30,6 @@ I'm not responsible for anything that happens to your ESPN account by doing this
 5. If all goes well, it will spit out a bunch of information and write to the specified file. 
 6. Import that file to Excel or Google Sheets (so you can share with the rest of the league like the nice person I know you are) and enjoy.
 
+## Thanks
+
+Special thanks to [Crunch Time Baseball](http://crunchtimebaseball.com/baseball_map.html) for supplying the CSV containing player IDs. Make sure to take a look over there if you're interested in fantasy data.
