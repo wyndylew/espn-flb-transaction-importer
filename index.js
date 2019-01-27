@@ -125,9 +125,7 @@ const getLeagueStatus = auth =>
           auth.espn_api
         }; ESPN-ONESITE.WEB-PROD-ac=XUS; ESPN-ONESITE.WEB-PROD.auth=disneyid; SWID=${
           auth.swid
-        }; SWID_NT=0; dtcAuth=false; espn_s2=${auth.espn_s2};`,
-        'X-Fantasy-Filter':
-          '{"transactions":{"filterType":{"value":["WAIVER","WAIVER_ERROR", "TRADE_UPHOLD"]}}}'
+        }; SWID_NT=0; dtcAuth=false; espn_s2=${auth.espn_s2};`
       }
     }
   ).then(response => {
@@ -162,6 +160,7 @@ Promise.all([
     [
       'DATE',
       'TIME',
+      'TRANSACTION',
       'TYPE',
       'COST',
       'PLAYER_ID',
@@ -173,7 +172,6 @@ Promise.all([
     ].join(',')
   );
   let total = 0;
-  const transactions = [];
   let promise = Promise.resolve();
   for (
     let i = auth.status.firstScoringPeriod;
@@ -194,7 +192,7 @@ Promise.all([
               auth.swid
             }; SWID_NT=0; dtcAuth=false; espn_s2=${auth.espn_s2};`,
             'X-Fantasy-Filter':
-              '{"transactions":{"filterType":{"value":["WAIVER","WAIVER_ERROR", "TRADE_UPHOLD"]}}}'
+              '{"transactions":{"filterType":{"value":["WAIVER","WAIVER_ERROR", "TRADE_UPHOLD", "FREEAGENT"]}}}'
           }
         }
       ).then(response => {
@@ -250,6 +248,7 @@ Promise.all([
                 [
                   date.format('MMMM D'),
                   date.format('h:mmA'),
+                  transaction.type,
                   item.type,
                   transaction.type === 'WAIVER' && item.type === 'ADD'
                     ? `${transaction.bidAmount}`
