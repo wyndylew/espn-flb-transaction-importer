@@ -217,6 +217,9 @@ Promise.all([
 
             const items = [];
             for (const item of transaction.items) {
+              if (item.type === 'LINEUP') {
+                console.log('');
+              }
               let player = playerMap.get(`${item.playerId}`);
               if (player == null) {
                 player = { espnId: item.playerId, name: 'UNKNOWN', pos: '???' };
@@ -243,7 +246,11 @@ Promise.all([
                       return `${team.location} ${team.nickname}`;
                     })();
 
-              const date = moment(transaction.processDate);
+              const date = moment(
+                transaction.processDate != null
+                  ? transaction.processDate
+                  : transaction.proposedDate
+              );
               logger.write(
                 [
                   date.format('MMMM D'),
